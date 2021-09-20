@@ -1,5 +1,4 @@
 import math
-import time
 
 def toBaseTen(n, startBase) :    # n must be a string
     numOn = len(n) - 1
@@ -29,7 +28,7 @@ def fromBaseTen(n, targetBase) :
     final += str(multiplier - 1)
     n -= baseRaised
 
-    while n > 0 :
+    while powerNum > 0 :
         powerNum -= 1
         baseRaised = math.pow(float(targetBase), powerNum)
 
@@ -41,8 +40,6 @@ def fromBaseTen(n, targetBase) :
         n -= baseRaised * multiplier
 
     return final
-
-# ERROR: CONVERTING fromBaseTen(57, 3) gives 212 when the answer is 2120 - it cuts off the zero
 
 while True :
     num = int(input("Enter number to convert:\n"))
